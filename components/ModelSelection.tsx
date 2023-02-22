@@ -13,6 +13,7 @@ function ModelSelection() {
         isSearchable
         isLoading = {isLoading}
         menuPosition = 'fixed'
+        
         classNames={{
             control: (state)=>"bg-[#434654] border-[#434654]",
         }}

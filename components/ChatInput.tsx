@@ -18,7 +18,7 @@ type Props={
 function ChatInput({chatId}:Props) {
   const [prompt, setPrompt]= useState("");//since we use state we must make it a client side component
   const {data:session} = useSession();
-  const{data:model} = useSWR('model', {fallbackData:'text-divinci-003'})
+  const{data:model} = useSWR('model', {fallbackData:'text-davinci-003'})
 
   const sendMessage =async (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -62,6 +62,7 @@ function ChatInput({chatId}:Props) {
   return (
     <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm  ">
       <form  onSubmit={sendMessage} className="p-5 spaces-x-5 flex">
+        
         <input 
         className="bg-transparent focus:outline-none flex-1 disabled:cursor-not-allowed disabled:text-gray-300 "
         disabled = {!session}
